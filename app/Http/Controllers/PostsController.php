@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
 use App\Models\Post;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [ 'except' => 'index' ]);
+    }
+
     public function index()
     {
         $posts = Post::latest()->paginate(10);
@@ -25,14 +30,15 @@ class PostsController extends Controller
         return view('posts.create');
     }
 
-    // public function store(StorePostRequest $request)
-    // {
-        
-    //     Post::create([
-    //         'title' => request('title'),
-    //         'body' => request('body'),
-    //     ]);
-
-    //     return redirect('/posts');
-    // }
+    public function store(StorePostRequest $request)
+    {
+        $request->validated();
+        Post::create([
+            'title' => request('title'),
+            'body' => request('body'),
+            'user_id' => auth()->id(),
+        ]);
+        $request = request();
+        return redirect('/posts');
+    }
 }

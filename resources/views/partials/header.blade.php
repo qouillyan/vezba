@@ -1,12 +1,31 @@
 <header>
 
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Home</a>
-            <a class="navbar-brand" href="/posts">All Posts</a>
-            <a class="navbar-brand" href="/posts/create">Submit</a>
-            <a class="navbar-brand" href="/register">Register</a>
-            <a class="navbar-brand" href="/login">Login</a>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg bg-light">
+     
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/"">Home</a>
+        </li>
+    @if(Auth::check())
+        <li class="nav-item">
+            <a class="nav-link" href="/posts/create">Submit</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ route('single-user', ['id' => auth()->user()->id]) }}">
+                {{ auth()->user()->name }}
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout">Logout</a>
+        </li>
+    @else
+        <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+        </li>
+    @endif
+    </ul>
+</nav>
 </header>
