@@ -15,7 +15,7 @@
             {{ $post->created_at }} - {{ $post->title }}
         </a></li>   
     </ul>
-    
+
 @endforeach
        
 @endsection

@@ -3,6 +3,7 @@
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,5 +19,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index']);
 Route::get('/posts', [PostsController::class, 'index']);
+Route::get('/posts/create', [PostsController::class, 'create']);
 Route::get('/posts/{id}', [PostsController::class, 'show'])->name('single-post');
 Route::get('/users/{id}', [UsersController::class, 'show'])->name('single-user');
+
+Route::get('/register', [RegisterController::class, 'create']);
+// Route::post('/register', [RegisterController::class, 'store']);

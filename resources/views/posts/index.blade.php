@@ -8,12 +8,14 @@
 
     @foreach ($posts as $post)
 
-        <ul>
-            <li><a href="{{ route('single-post', ['id' => $post->id]) }}">
-                {{ $post->created_at }} - {{ $post->title }}
-            </a></li>
-        </ul>
+        <a href="{{ route('single-post', ['id' => $post->id]) }}">
+            {{ $post->created_at }} - {{ $post->title }}
+        </a>
 
+        <br>
+        
     @endforeach
+
+    {{ $posts->links() }}
     
 @endsection

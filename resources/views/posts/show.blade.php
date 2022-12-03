@@ -15,5 +15,15 @@
         {{ $post->user->name }}
     </a>
 </p>
+
+<h3>Comments</h3>
+
+    @foreach($post->comments as $comment)
+        
+        <ul>
+            <li>{{ $comment }}</li>
+        </ul>
+
+    @endforeach
        
 @endsection
