@@ -24,4 +24,4 @@ Route::get('/posts/{id}', [PostsController::class, 'show'])->name('single-post')
 Route::get('/users/{id}', [UsersController::class, 'show'])->name('single-user');
 
 Route::get('/register', [RegisterController::class, 'create']);
-// Route::post('/register', [RegisterController::class, 'store']);
+Route::post('/register', [RegisterController::class, 'store']);

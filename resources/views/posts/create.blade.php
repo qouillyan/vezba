@@ -4,9 +4,9 @@
 
 @section('content')
 
-    <h3>Submit a post</h3>
-
     <br>
+
+    <h3>Submit a post</h3>
 
     <form method="POST" action="/posts">
 
@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="title" class="form-label">Title</label><br>
-            <input type="text" name="title" class="form-control" id="title" placeholder="Title"><br>
+            <input type="text" name="title" class="form-control" id="title" placeholder="Title">
         </div>
 
         @error('title')
@@ -29,8 +29,6 @@
         @error('body')
             @include('partials.error')
         @enderror
-
-        <br>
 
         <button type="submit" class="btn btn-primary mt-3">Submit</button>
 
