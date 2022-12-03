@@ -10,6 +10,10 @@
 
 <p>{{ $post->body }}</p>
 
-<p>{{ $post->user->name }}</p>
+<p>
+    <a href="{{ route('single-user', ['id' => $post->user->id]) }}">
+        {{ $post->user->name }}
+    </a>
+</p>
        
 @endsection
