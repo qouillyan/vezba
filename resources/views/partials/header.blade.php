@@ -1,6 +1,6 @@
 <header>
 
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm">
      
     <ul class="navbar-nav">
         <li class="nav-item">

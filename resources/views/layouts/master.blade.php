@@ -24,7 +24,7 @@
 
             @include('partials.header')
 
-        <main role="main" class="container">
+        <main role="main" class="container" style="padding-top:20px; padding-bottom:200px;">
 
             @if (session('message'))
                 <br>
