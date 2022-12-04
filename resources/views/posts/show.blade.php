@@ -41,6 +41,8 @@
     
     <br>
 
+    <h3>Comments</h3>
+
     @foreach($post->comments as $comment)
         
         <p>[ {{ $comment->user->name }} ]: {{ $comment->body }}</p>
