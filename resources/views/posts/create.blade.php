@@ -23,7 +23,7 @@
 
         <div class="mb-3">
             <label for="body" class="form-label">Body</label><br>
-            <textarea name="body" id="body" class="form-control" rows="3" placeholder="Content"></textarea>
+            <textarea name="body" id="body" class="form-control" rows="10" placeholder="Content"></textarea>
         </div>
 
         @error('body')

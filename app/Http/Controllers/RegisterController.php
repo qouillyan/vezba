@@ -20,7 +20,6 @@ class RegisterController extends Controller
     }
 
     public function store(StoreRegisterRequest $request) {
-
         $request->validated();
         $user = User::create([
             'name' => request('name'),                      
@@ -29,7 +28,7 @@ class RegisterController extends Controller
         ]);
         auth()->login($user);
         $request = request();
-        // session()->flash('message', 'Registration Successful');
+        session()->flash('message', 'Registration Successful');
         return redirect('/posts');
     }
 }
